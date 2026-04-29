@@ -1053,12 +1053,26 @@
     .para-quem-card { padding: 1.5rem; }
 
     /* PRODUTOS */
+    .produtos-intro p[style*="transform"] {
+      display: block !important;
+      margin-left: 0 !important;
+      transform: none !important;
+      padding: 0.8rem 1.2rem !important;
+      font-size: 0.95rem !important;
+    }
     .produtos-tabs { overflow-x: auto; white-space: nowrap; padding-bottom: 0; }
     .tab-btn { padding: 0.8rem 1rem; font-size: 0.78rem; }
-    .tab-content.active { grid-template-columns: 1fr; }
+    .tab-content.active { grid-template-columns: 1fr !important; }
     .tab-content.active.grid-2 { grid-template-columns: 1fr; }
+    .tab-content.active.grid-3 { grid-template-columns: 1fr !important; }
     .produto-card { padding: 1.5rem; }
     .produto-card .btn-primary { width: 100%; text-align: center; }
+    .produto-card[style*="transform: scale"] { transform: scale(1) !important; }
+    .produto-card[style*="border: 3px solid"] div[style*="position: absolute"] {
+      font-size: 0.7rem !important;
+      padding: 0.4rem 1.2rem !important;
+      top: -14px !important;
+    }
 
     /* CTA */
     .cta-final { padding: 3rem 5%; gap: 2rem; }
@@ -1256,64 +1270,106 @@
   <div class="produtos-intro">
     <div class="section-label">Planos e produtos</div>
     <h2 class="section-title">Escolha o seu plano de voo</h2>
+    <p style="text-align: center; color: var(--wine); font-weight: 700; margin-top: 1.5rem; font-size: 1.1rem; background: rgba(114,47,55,0.08); padding: 1rem 2rem; border-radius: 8px; display: inline-block; margin-left: 50%; transform: translateX(-50%);">
+      🔥 Promoção válida até 16 de maio
+    </p>
   </div>
 
-  <div class="produtos-tabs">
-    <button class="tab-btn active" data-tab="mentorias">Mentorias</button>
-    <button class="tab-btn" data-tab="materiais">Materiais</button>
-  </div>
-
-  <!-- Mentorias -->
-  <div class="tab-content active" id="tab-mentorias">
-    <div class="produto-card">
-      <h3>Decolagem Nacional</h3>
-      <p class="desc">Para quem mira nas companhias brasileiras e quer se destacar nos processos seletivos nacionais.</p>
-      <ul>
-        <li>4 encontros individuais via Google Meet</li>
-        <li>Material de apoio em PDF</li>
-        <li>Imagem e Etiqueta</li>
-        <li>Revisão de currículo</li>
-        <li>Simulação de dinâmicas</li>
-        <li>Análise e feedback individual por escrito</li>
-        <li>Suporte total via WhatsApp</li>
-      </ul>
-      <div class="price"><span class="price-old">R$ 790</span><br><span>R$</span> 395</div>
-      <a href="https://wa.me/5521996900501?text=Olá%20Daianna!%20Tenho%20interesse%20na%20Mentoria%20Decolagem%20Nacional." class="btn-primary" target="_blank">Quero este plano</a>
-    </div>
-
-    <div class="produto-card featured-procurada">
-      <h3>Rumo ao Exterior</h3>
-      <p class="desc">Foco total em Emirates, Qatar Airways e Etihad. Do screening day ao golden call.</p>
+  <!-- Grid de 3 Pacotes -->
+  <div class="tab-content active grid-3" id="tab-mentorias" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem;">
+    
+    <!-- PACOTE 1: Rumo ao Exterior - DESTAQUE -->
+    <div class="produto-card" style="border: 3px solid var(--wine); box-shadow: 0 8px 32px rgba(114,47,55,0.2); position: relative; transform: scale(1.02);">
+      <div style="position: absolute; top: -18px; left: 50%; transform: translateX(-50%); background: var(--wine); color: white; padding: 0.5rem 1.8rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; border-radius: 20px; box-shadow: 0 4px 12px rgba(114,47,55,0.4); z-index: 10;">
+        ⭐ MAIS PROCURADO
+      </div>
+      <div style="background: linear-gradient(135deg, rgba(114,47,55,0.05) 0%, rgba(201,168,76,0.05) 100%); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; margin-top: 1.2rem;">
+        <h3 style="margin-bottom: 0.3rem;">Rumo ao Exterior</h3>
+        <p class="desc" style="margin-bottom: 0.3rem;">Acesso ilimitado às aulas · Inglês Fluente (Individual)</p>
+        <p style="color: var(--wine); font-weight: 700; font-size: 0.85rem; margin: 0;">🔥 Apenas 4 VAGAS disponíveis</p>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.8rem;">
+        <strong style="color: var(--navy);">Duração:</strong> 1 Mês · Individual · Do screening day ao golden call.
+      </p>
       <ul>
         <li>6 encontros individuais via Google Meet</li>
         <li>Material de apoio em PDF</li>
         <li>Preparação completa para todas as etapas</li>
         <li>Screening Day + Assessment Day</li>
         <li>Final Interview + Golden Call</li>
+        <li>Metodologia de Imersão diária</li>
+        <li>Inglês Intensivo para aviação</li>
         <li>Simulação de dinâmicas em inglês</li>
         <li>Análise e feedback individual por escrito</li>
-        <li style="margin-top: 0.8rem; padding: 0.6rem 0.8rem; background: rgba(201,168,76,0.1); border-left: 3px solid var(--gold); border-radius: 2px; list-style: none; font-weight: 500; color: var(--navy);">🎁 Bônus: Material didático em PDF de Inglês para aviação</li>
         <li>Suporte total via WhatsApp</li>
       </ul>
-      <div class="price"><span class="price-old">R$ 1.590</span><br><span>R$</span> 795</div>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNyF57wYMIsTKwRb7A7PuYu3QnPhKZnSll88Cd6sYDku5spw/viewform" class="btn-primary" target="_blank">Quero este plano</a>
+      <div style="background: rgba(201,168,76,0.08); padding: 0.8rem; border-radius: 6px; margin: 1rem 0 0.8rem 0; border-left: 3px solid var(--gold);">
+        <p style="margin: 0; font-size: 0.85rem; color: var(--navy); font-weight: 500;">
+          🎁 <strong>Bônus:</strong> Material didático em PDF de Inglês para aviação
+        </p>
+      </div>
+      <div style="margin-top: 1rem;">
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem; text-decoration: line-through;">de R$ 1.590</p>
+        <div class="price" style="margin-bottom: 0.3rem;"><span style="font-size: 1.4rem;">4x de</span> R$ 200</div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">ou R$ 800 à vista</p>
+      </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNyF57wYMIsTKwRb7A7PuYu3QnPhKZnSll88Cd6sYDku5spw/viewform" class="btn-primary" target="_blank" style="margin-top: 1.2rem; background: var(--navy); border-color: var(--navy);">Quero me inscrever</a>
     </div>
-  </div>
 
-  <!-- Materiais -->
-  <div class="tab-content grid-1" id="tab-materiais">
-    <div class="produto-card" style="max-width: 480px;">
-      <h3>E-book: Comissário do Zero</h3>
-      <p class="desc">O guia completo em PDF para quem está começando agora. Do zero ao processo seletivo, tudo o que você precisa saber reunido em um material.</p>
+    <!-- PACOTE 2: Pacote Express -->
+    <div class="produto-card">
+      <h3>Pacote Express</h3>
+      <p class="desc">Acesso ilimitado às aulas · Inglês intermediário (turma)</p>
+      <p style="color: var(--wine); font-weight: 700; font-size: 0.85rem; margin-bottom: 0.8rem;">🔥 Apenas 4 VAGAS disponíveis</p>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.8rem;">
+        <strong style="color: var(--navy);">Duração:</strong> 10 meses · Turma · Para quem já tem inglês Intermediário e quer chegar ao Open Day
+      </p>
       <ul>
-        <li>Material em PDF completo</li>
-        <li>Passo a passo da carreira de comissário</li>
-        <li>Dicas exclusivas de quem viveu na pele</li>
-        <li>Acesso imediato após a compra</li>
+        <li>3 meses de inglês Avançado — entrevista, STAR, group assessment, presença</li>
+        <li>1 mês de mentoria em turma de até 8 pessoas (Emirates · Qatar · Etihad)</li>
+        <li>1 aula individual de 1h por semana ao longo do programa</li>
+        <li>Metodologia de Imersão diária</li>
+        <li>Inglês Intensivo para aviação</li>
+        <li>Mock-up completo do processo seletivo: do Open Day à Final Interview</li>
+        <li>English for Cabin Crew + E-book 500 Frases de Bordo — inclusos</li>
+        <li>Suporte via WhatsApp durante todo o programa</li>
       </ul>
-      <div class="price"><span>R$</span> 67</div>
-      <a href="https://hotmart.com/pt-br/marketplace/produtos/guia-completo-para-iniciantes-sua-jornada-como-comissario-de-bordo/H105201932N" class="btn-primary" target="_blank">Quero o e-book</a>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.8rem; margin-bottom: 0.8rem; font-style: italic;">
+        Para quem já está no nível Intermediário e quer ir direto ao processo seletivo
+      </p>
+      <div style="margin-top: 1rem;">
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem; text-decoration: line-through;">de R$ 3.490</p>
+        <div class="price" style="margin-bottom: 0.3rem;"><span style="font-size: 1.4rem;">6x de</span> R$ 499</div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">ou R$ 2.790 à vista</p>
+      </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeE0g1qQP_N9lZ3tWky2GSZ4O-QrDh_ULfW3NqyJqLoUCyMMA/viewform" class="btn-primary" target="_blank" style="margin-top: 1.2rem;">Quero me inscrever</a>
     </div>
+
+    <!-- PACOTE 3: Comece do Zero -->
+    <div class="produto-card">
+      <h3>Comece do Zero</h3>
+      <p class="desc">Acesso ilimitado às aulas · Inglês Básico (turma)</p>
+      <p style="color: var(--wine); font-weight: 700; font-size: 0.85rem; margin-bottom: 0.8rem;">🔥 Apenas 6 VAGAS disponíveis</p>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.8rem;">
+        <strong style="color: var(--navy);">Duração:</strong> 10 meses · Turma · Para quem não tem inglês, e quer começar do zero.
+      </p>
+      <ul>
+        <li>9 meses de inglês aplicado à aviação — do zero à fluência</li>
+        <li>1 mês de mentoria em turma de até 8 pessoas (Emirates · Qatar · Etihad)</li>
+        <li>1 aula individual de 1h por semana ao longo do programa</li>
+        <li>Mock-up completo do processo seletivo: do Open Day à Final Interview</li>
+        <li>English for Cabin Crew + E-book 500 Frases de Bordo — inclusos</li>
+        <li>Suporte via WhatsApp durante todo o programa</li>
+        <li>Certificados de conclusão de cada etapa</li>
+      </ul>
+      <div style="margin-top: 1rem;">
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem; text-decoration: line-through;">de R$ 5.500</p>
+        <div class="price" style="margin-bottom: 0.3rem;"><span style="font-size: 1.4rem;">12x de</span> R$ 407</div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">ou R$ 4.490 à vista</p>
+      </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeE0g1qQP_N9lZ3tWky2GSZ4O-QrDh_ULfW3NqyJqLoUCyMMA/viewform" class="btn-primary" target="_blank" style="margin-top: 1.2rem;">Começar do Zero</a>
+    </div>
+
   </div>
 </section>
 
