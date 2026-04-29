@@ -389,23 +389,30 @@
     margin-bottom: 1.8rem;
   }
 
-  .produto-card.featured-procurada {
-    border-color: var(--gold);
-    position: relative;
-  }
+ .produto-card.featured-procurada {
+  border: 1px solid var(--gold);
+  position: relative;
+  overflow: visible;
+}
 
-  .produto-card.featured-procurada::before {
-    content: 'MAIS PROCURADA';
-    position: absolute;
-    top: -11px; left: 50%;
-    transform: translateX(-50%);
-    background: var(--gold);
-    color: var(--navy);
-    font-size: 0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    padding: 0.25rem 0.8rem;
-  }
+.produto-card.featured-procurada::before {
+  content: 'MAIS PROCURADO';
+  position: absolute;
+  top: -12px;
+  right: 20px; /* 👈 muda de central pra canto */
+  
+  background: var(--gold);
+  color: var(--navy);
+
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  padding: 6px 12px;
+  border-radius: 6px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
 
   .sobre-creds {
     display: grid;
