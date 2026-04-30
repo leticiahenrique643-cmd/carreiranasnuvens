@@ -803,19 +803,16 @@ src="https://www.facebook.com/tr?id=932656392886159&ev=PageView&noscript=1"
 
   .cta-photo {
     margin: -3rem -3rem 2rem -3rem;
-    height: auto;
-    min-height: 280px;
-    max-height: 480px;
     overflow: hidden;
     background: var(--navy);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
   }
 
   .cta-photo img {
-    width: auto;
-    height: 100%;
+    width: 100%;
+    height: auto;
     max-width: 100%;
     object-fit: contain;
     display: block;
@@ -970,9 +967,12 @@ src="https://www.facebook.com/tr?id=932656392886159&ev=PageView&noscript=1"
       position: relative;
     }
     .hero-center img {
-      width: 220px;
-      height: 300px;
-      max-height: 300px;
+      width: 100%;
+      max-width: 340px;
+      height: auto;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top center;
       border-radius: 3px;
       box-shadow: 0 12px 40px rgba(27,42,74,0.2);
     }
@@ -1057,8 +1057,8 @@ src="https://www.facebook.com/tr?id=932656392886159&ev=PageView&noscript=1"
     .hero-buttons { flex-direction: column; gap: 0.75rem; }
     .hero-buttons .btn-primary,
     .hero-buttons .btn-secondary { width: 100%; text-align: center; padding: 1rem; }
-    .hero-center { display: flex; }
-    .hero-center img { height: 52vw; max-height: 280px; }
+    .hero-center { display: flex; padding: 1.5rem 5%; }
+    .hero-center img { width: 100%; max-width: 300px; height: auto; aspect-ratio: 3/4; object-fit: cover; object-position: top center; border-radius: 3px; }
     .hero-right { height: 55vw; max-height: 260px; }
 
     /* SECTION TITLES */
@@ -1106,7 +1106,8 @@ src="https://www.facebook.com/tr?id=932656392886159&ev=PageView&noscript=1"
     .cta-final { padding: 3rem 5%; gap: 2rem; }
     .cta-text .btn-primary { width: 100%; text-align: center; }
     .cta-contact { padding: 1.5rem; }
-    .cta-photo { margin: -1.5rem -1.5rem 1.5rem -1.5rem; min-height: 200px; max-height: 280px; }
+    .cta-photo { margin: -1.5rem -1.5rem 1.5rem -1.5rem; min-height: unset; max-height: 220px; overflow: hidden; }
+    .cta-photo img { width: 100%; height: 220px; object-fit: cover; object-position: top center; }
 
     /* FOOTER */
     footer { padding: 1.5rem 5%; font-size: 0.72rem; }
@@ -1299,7 +1300,7 @@ src="https://www.facebook.com/tr?id=932656392886159&ev=PageView&noscript=1"
   <div class="produtos-intro">
     <div class="section-label">Planos e produtos</div>
     <h2 class="section-title">Escolha o seu plano de voo</h2>
-    <p style="color: var(--wine); font-weight: 700; margin-top: 1.5rem; font-size: 1.1rem; background: rgba(114,47,55,0.08); padding: 1rem 2rem; border-radius: 8px; display: inline-block; white-space: nowrap;">
+    <p style="color: var(--wine); font-weight: 700; margin-top: 1.5rem; font-size: 1.1rem; background: rgba(114,47,55,0.08); padding: 1rem 1.5rem; border-radius: 8px; display: block; max-width: 100%; box-sizing: border-box; text-align: center;">
       🔥 Promoção válida até 16 de maio
     </p>
   </div>
