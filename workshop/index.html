@@ -1,0 +1,571 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emirates Cabin Crew Selection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+
+    :root {
+      --navy: #1B2A4A;
+      --wine: #722F37;
+      --gold: #C9A84C;
+      --gold-light: #E8D49A;
+      --beige: #F5F0EA;
+      --white: #FDFBF8;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+    }
+
+    /* ========== HERO SECTION ========== */
+    .hero-section {
+      background: linear-gradient(135deg, var(--navy) 0%, #0f1623 100%);
+      color: var(--white);
+      padding: 6rem 4rem;
+      text-align: center;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: rgba(201, 168, 76, 0.05);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+
+    .hero-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+
+    .hero-label::before {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-label::after {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 1rem 2.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(201, 168, 76, 0.2);
+    }
+
+    .hero-cta:hover {
+      background: var(--gold-light);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(201, 168, 76, 0.3);
+    }
+
+    /* ========== WORKSHOP SECTION ========== */
+    .workshop-section {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      min-height: 520px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .workshop-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          rgba(201,168,76,0.03) 0px,
+          rgba(201,168,76,0.03) 1px,
+          transparent 1px,
+          transparent 80px
+        ),
+        repeating-linear-gradient(
+          0deg,
+          rgba(201,168,76,0.03) 0px,
+          rgba(201,168,76,0.03) 1px,
+          transparent 1px,
+          transparent 80px
+        );
+      pointer-events: none;
+    }
+
+    .ws-left {
+      padding: 5rem 4rem 5rem 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+      border-right: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .ws-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.35);
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      margin-bottom: 2rem;
+      width: fit-content;
+    }
+
+    .ws-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    .ws-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .ws-label::before {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .ws-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .ws-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .ws-subtitle {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 2.5rem;
+      max-width: 420px;
+    }
+
+    .ws-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .ws-pilar {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .ws-pilar-icon {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      margin-top: 1px;
+    }
+
+    .ws-pilar-text strong {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--gold-light);
+      margin-bottom: 0.15rem;
+      letter-spacing: 0.02em;
+    }
+
+    .ws-pilar-text span {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.5;
+    }
+
+    .ws-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 5rem 4rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .ws-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.25);
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 360px;
+      position: relative;
+    }
+
+    .ws-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--wine), var(--gold));
+    }
+
+    .ws-card-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 0.5rem;
+    }
+
+    .ws-event-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 2rem;
+      line-height: 1.2;
+    }
+
+    .ws-event-title em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .ws-info-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .ws-info-row:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .ws-info-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .ws-info-row div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ws-info-row span:first-child {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.1rem;
+    }
+
+    .ws-info-row span:last-child {
+      font-size: 0.92rem;
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .ws-divider {
+      height: 1px;
+      background: rgba(201,168,76,0.15);
+      margin: 1.8rem 0;
+    }
+
+    .ws-free-tag {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .ws-free-tag span {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .ws-free-tag p {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 0.2rem;
+    }
+
+    .ws-cta {
+      display: block;
+      width: 100%;
+      background: var(--gold);
+      color: var(--navy);
+      text-align: center;
+      padding: 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .ws-cta:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    .ws-warning {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      justify-content: center;
+    }
+
+    .ws-warning::before {
+      content: '⚠';
+      font-size: 11px;
+    }
+
+    .deco-plane {
+      position: absolute;
+      bottom: 3rem;
+      left: 3rem;
+      font-size: 6rem;
+      opacity: 0.04;
+      transform: rotate(-15deg);
+      pointer-events: none;
+      user-select: none;
+      z-index: 1;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      .workshop-section {
+        grid-template-columns: 1fr;
+      }
+
+      .ws-left {
+        border-right: none;
+        border-bottom: 1px solid rgba(201,168,76,0.15);
+        padding: 3rem 2rem;
+      }
+
+      .ws-right {
+        padding: 3rem 2rem;
+      }
+
+      .hero-section {
+        padding: 3rem 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-label">Emirates Cabin Crew</div>
+      <h1 class="hero-title">Seu caminho para <em>decolar</em> com a Emirates</h1>
+      <p class="hero-subtitle">Aprenda com quem já passou pela seleção. Dicas reais, estratégias comprovadas e uma comunidade de apoio para sua jornada.</p>
+      <a href="#workshop" class="hero-cta">Garantir Vaga no Workshop</a>
+    </div>
+  </section>
+
+  <!-- WORKSHOP SECTION -->
+  <section class="workshop-section" id="workshop">
+    <div class="deco-plane">✈</div>
+
+    <div class="ws-left">
+      <div class="ws-badge">Aula gratuita · 16 de maio</div>
+      <div class="ws-label">Workshop</div>
+      <h2 class="ws-title">Tudo o que você precisa saber antes do <em>Screening Day</em></h2>
+      <p class="ws-subtitle">Uma preparação real, feita por quem passou pela seleção da Emirates na primeira tentativa.</p>
+
+      <div class="ws-pillars">
+        <div class="ws-pilar">
+          <div class="ws-pilar-icon">👔</div>
+          <div class="ws-pilar-text">
+            <strong>Grooming & Apresentação</strong>
+            <span>Os padrões visuais exatos da Emirates e como montar um look impecável</span>
+          </div>
+        </div>
+        <div class="ws-pilar">
+          <div class="ws-pilar-icon">🎤</div>
+          <div class="ws-pilar-text">
+            <strong>Comunicação em inglês</strong>
+            <span>Como se apresentar com clareza e causar uma primeira impressão inesquecível</span>
+          </div>
+        </div>
+        <div class="ws-pilar">
+          <div class="ws-pilar-icon">🤝</div>
+          <div class="ws-pilar-text">
+            <strong>Dinâmicas em grupo</strong>
+            <span>O que esperar em cada etapa e como se destacar sem parecer forçado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ws-right">
+      <div class="ws-card">
+        <div class="ws-card-label">Detalhes do evento</div>
+        <div class="ws-event-title">Aula ao vivo <em>gratuita</em></div>
+
+        <div class="ws-info-row">
+          <div class="ws-info-dot"></div>
+          <div>
+            <span>Data</span>
+            <span>16 de maio de 2026</span>
+          </div>
+        </div>
+        <div class="ws-info-row">
+          <div class="ws-info-dot"></div>
+          <div>
+            <span>Horário</span>
+            <span>A confirmar — avisaremos no grupo</span>
+          </div>
+        </div>
+        <div class="ws-info-row">
+          <div class="ws-info-dot"></div>
+          <div>
+            <span>Formato</span>
+            <span>Online · Ao vivo</span>
+          </div>
+        </div>
+
+        <div class="ws-divider"></div>
+
+        <div class="ws-free-tag">
+          <span>100% Gratuito</span>
+          <p>Vagas limitadas</p>
+        </div>
+
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScqRQPJI5VaQfidoTdhJ3vnUER7kDgL8zduWd72LRDmNkr2qg/viewform" class="ws-cta" target="_blank">Garantir minha vaga ✈</a>
+
+        <div class="ws-warning">Vagas encerram assim que preencherem</div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
